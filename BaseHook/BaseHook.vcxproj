@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>BaseHook</ProjectName>
+    <ProjectGuid>{663CDD7C-E5BC-484D-B1BB-0CC8FB77F2B8}</ProjectGuid>
+    <RootNamespace>BaseHook</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;BASEHOOK_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;BASEHOOK_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseHook.cpp" />
+    <ClCompile Include="MemSearch.cpp" />
+    <ClCompile Include="SDK\parsemsg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseHook.h" />
+    <ClInclude Include="CSSDK.h" />
+    <ClInclude Include="cvar.h" />
+    <ClInclude Include="CvarDef.h" />
+    <ClInclude Include="HLSDK.h" />
+    <ClInclude Include="igameconsole.h" />
+    <ClInclude Include="MemSearch.h" />
+    <ClInclude Include="MsgAPI.h" />
+    <ClInclude Include="SDK\anorms.h" />
+    <ClInclude Include="SDK\beamdef.h" />
+    <ClInclude Include="SDK\cdll_dll.h" />
+    <ClInclude Include="SDK\cdll_engine_dll.h" />
+    <ClInclude Include="SDK\cdll_int.h" />
+    <ClInclude Include="SDK\cl_dll.h" />
+    <ClInclude Include="SDK\cl_entity.h" />
+    <ClInclude Include="SDK\com_model.h" />
+    <ClInclude Include="SDK\con_nprint.h" />
+    <ClInclude Include="SDK\const.h" />
+    <ClInclude Include="SDK\crc.h" />
+    <ClInclude Include="SDK\custom.h" />
+    <ClInclude Include="SDK\customentity.h" />
+    <ClInclude Include="SDK\cvardef.h" />
+    <ClInclude Include="SDK\demo_api.h" />
+    <ClInclude Include="SDK\director_cmds.h" />
+    <ClInclude Include="SDK\dlight.h" />
+    <ClInclude Include="SDK\dll_state.h" />
+    <ClInclude Include="SDK\edict.h" />
+    <ClInclude Include="SDK\eiface.h" />
+    <ClInclude Include="SDK\engine_launcher_api.h" />
+    <ClInclude Include="SDK\entity_state.h" />
+    <ClInclude Include="SDK\entity_types.h" />
+    <ClInclude Include="SDK\event_api.h" />
+    <ClInclude Include="SDK\event_args.h" />
+    <ClInclude Include="SDK\event_flags.h" />
+    <ClInclude Include="SDK\exefuncs.h" />
+    <ClInclude Include="SDK\hltv.h" />
+    <ClInclude Include="SDK\in_buttons.h" />
+    <ClInclude Include="SDK\interface.h" />
+    <ClInclude Include="SDK\itrackeruser.h" />
+    <ClInclude Include="SDK\ivoicetweak.h" />
+    <ClInclude Include="SDK\keydefs.h" />
+    <ClInclude Include="SDK\mathlib.h" />
+    <ClInclude Include="SDK\net_api.h" />
+    <ClInclude Include="SDK\netadr.h" />
+    <ClInclude Include="SDK\nowin.h" />
+    <ClInclude Include="SDK\parsemsg.h" />
+    <ClInclude Include="SDK\particledef.h" />
+    <ClInclude Include="SDK\pm_defs.h" />
+    <ClInclude Include="SDK\pm_info.h" />
+    <ClInclude Include="SDK\pm_materials.h" />
+    <ClInclude Include="SDK\pmtrace.h" />
+    <ClInclude Include="SDK\progdefs.h" />
+    <ClInclude Include="SDK\progs.h" />
+    <ClInclude Include="SDK\qfont.h" />
+    <ClInclude Include="SDK\r_efx.h" />
+    <ClInclude Include="SDK\r_studioint.h" />
+    <ClInclude Include="SDK\ref_params.h" />
+    <ClInclude Include="SDK\screenfade.h" />
+    <ClInclude Include="SDK\shake.h" />
+    <ClInclude Include="SDK\sprites.h" />
+    <ClInclude Include="SDK\studio.h" />
+    <ClInclude Include="SDK\studio_event.h" />
+    <ClInclude Include="SDK\triangleapi.h" />
+    <ClInclude Include="SDK\usercmd.h" />
+    <ClInclude Include="SDK\util_vector.h" />
+    <ClInclude Include="SDK\weaponinfo.h" />
+    <ClInclude Include="SDK\wrect.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
